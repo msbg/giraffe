@@ -11,12 +11,11 @@ Steps to do the above:
     * docker image tag giraffe docker-vm:5000/giraffe
     * docker push docker-vm:5000/giraffe
 * Install on local k8 cluster:
-    * Install new deployment:
-        * kubectl apply -f C:\GitHub\giraffe\poc1\k8-deployment.yaml
-    * Update to new image:
-        * kubectl rollout restart deployment poc1-deployment
+    * Install new deployment via helm:
+        * helm install --dry-run --debug giraffe-release1 giraffechart
 * Forward the port from the host:
-    * kubectl -n default port-forward poc1-deployment-9cc67f5cc-rlkm9 8090:8090 --address 0.0.0.0
+    * kubectl get pods --all-namespaces
+    * kubectl port-forward giraffe-release1-poc1-deployment-7484d7677c-7z6pc 8090:8090 --address 0.0.0.0
 
 Local k8 cluster info
 * Dashboard: k8s-vm:8443
