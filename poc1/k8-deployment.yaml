@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc1-deployment
+  labels:
+    app: poc1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: poc1
+  template:
+    metadata:
+      labels:
+        app: poc1
+    spec:
+      containers:
+      - name: poc1
+        image: docker-vm:5000/giraffe
+        ports:
+        - containerPort: 8090
