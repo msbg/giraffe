@@ -18,7 +18,7 @@ Steps to do the above:
 * Forward the port from the host:
     * kubectl -n default port-forward poc1-deployment-9cc67f5cc-rlkm9 8090:8090 --address 0.0.0.0
 
-Local k8 cluster info
+* Local k8 cluster info
     * Dashboard: k8s-vm:8443
         * Portforward:
             * kubectl -n kubernetes-dashboard port-forward kubernetes-dashboard-798dd48467-bb527 8443:8443 --address 0.0.0.0
